@@ -1,16 +1,22 @@
 public enum Season {
-    Winter("Белый"),
-    Spring("Зеленый"),
-    Summer("Крансый"),
-    autumn("Желтый");
+    Winter("Белый","Зима"),
+    Spring("Зеленый", "Весна"),
+    Summer("Красный", "Лето"),
+    Autumn("Желтый", "Осень");
 
-    private String Color;
+    private final String Color;
+    private final String nameSeason;
 
     public String getColor() {
         return Color;
     }
 
-    Season(String Color) {
+    public String getNameSeason() {
+        return nameSeason;
+    }
+
+    Season(String Color,String nameSeason) {
         this.Color = Color;
+        this.nameSeason=nameSeason;
     }
 }

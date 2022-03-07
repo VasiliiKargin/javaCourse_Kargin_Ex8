@@ -1,12 +1,17 @@
+import java.math.BigDecimal;
+
 public class Client extends Person implements  Printable, SeasonHandler{
     public int timeOnFirstPay;
-    public float sumPay;
+    public BigDecimal sumPay;
+    public Season seasonPay;
 
 
-    Client(String name, int age,int timeOnFirstPay, float sumPay) {
+
+    Client(String name, int age,int timeOnFirstPay, BigDecimal sumPay, Season seasonPay) {
         super(name, age);
         this.timeOnFirstPay=timeOnFirstPay;
         this.sumPay=sumPay;
+        this.seasonPay=seasonPay;
     }
 
     @Override
@@ -17,6 +22,7 @@ public class Client extends Person implements  Printable, SeasonHandler{
 
     @Override
     public void execute() {
-       // System.out.println(Season.getColor());
+        System.out.println("Сейчас " + seasonPay.getNameSeason()+ ", Цвет сезона: " + seasonPay.getColor());
+
     }
 }
